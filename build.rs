@@ -42,7 +42,7 @@ fn main() {
 
 
     {
-        let mut cmd = Command::new("./configure");
+        let mut cmd = Command::new(std::fs::canonicalize(sixel_dir.join("configure")).unwrap());
         cmd.current_dir(sixel_dir)
             .arg("--prefix")
             .arg(out_dir);
